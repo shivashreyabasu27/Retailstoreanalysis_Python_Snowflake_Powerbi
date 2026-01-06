@@ -38,9 +38,9 @@ The goal is to transform raw retail data into meaningful insights such as **mont
 ---
 
 ## 📊 Results
-- **Monthly Sales Trends** → Line chart showing revenue growth over time  
-- **Customer Activity** → Top customers by orders and spend  
-- **Retail KPIs** → Total sales, average order value, repeat customers  
+- **Amount by store type** → Showing pie chart based on store types, program tiers, region wise amount
+- **Customer Activity** → Top customers by age
+- **Retail KPIs** → Total sales, average order value,Discount value 
 
 ## 📊 Power BI Dashboard
 
