@@ -16,27 +16,6 @@ The goal is to transform raw retail data into meaningful insights such as **mont
 
 ---
 
-## 📂 Repository Structure
-Retail-Stores-Data-Warehouse-Project/
-│
-├── README.md                 # Project overview
-├── data/                    # Raw and cleaned datasets (Excel/CSV)
-├── python/                 # Python scripts for ETL and transformations
-│   ├── data_cleaning.py
-│   ├── etl_pipeline.py
-│   └── analytics.py
-├── snowflake/                     # Snowflake SQL scripts
-│   ├── create_database_schema.sql
-│   ├── create_tables.sql
-│   ├── load_data.sql
-│   ├── transformations.sql
-│   └── analytics_queries.sql
-├── powerbi/              # Power BI dashboards
-    └── retail_dashboard.pbix
-
-
----
-
 ## ⚙️ Workflow
 1. **Data Preparation (Python + Pandas)**  
    - Cleaned raw Excel/CSV files  
