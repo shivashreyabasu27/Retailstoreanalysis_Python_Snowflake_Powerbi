@@ -46,7 +46,7 @@ The goal is to transform raw retail data into meaningful insights such as **mont
 
 Here’s a snapshot of the interactive dashboard built in Power BI:
 
-![Sales Overview Dashboard](Power BI/Screenshot 2026-01-06 000617.png)
+![Retail Store Analysis Dashboard](Power%20BI/Screenshot%202026-01-06%20000617.png)
 
 
 ## 🚀 How to Run
