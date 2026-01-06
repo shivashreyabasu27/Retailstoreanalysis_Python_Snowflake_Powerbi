@@ -67,7 +67,7 @@ Retail-Stores-Data-Warehouse-Project/
 
 Here’s a snapshot of the interactive dashboard built in Power BI:
 
-![Sales Overview Dashboard](dashboards/sales_overview.png)
+![Sales Overview Dashboard](Power BI/Screenshot 2026-01-06 000617.png)
 
 
 ## 🚀 How to Run
