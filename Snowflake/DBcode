@@ -1,1 +1,180 @@
+Use database project1;
+
+--CREATING TABLES - FACT, DIMENSION TABLES
+
+--DIMESION TABLE - DIMDATE
+CREATE TABLE DimDate (
+    DateID INT PRIMARY KEY,
+    Date DATE,
+    DayOfWeek VARCHAR(10),
+    Month VARCHAR(10),
+    Quarter INT,
+    Year INT,
+    IsWeekend BOOLEAN
+);
+
+
+--CREATING DIMENSION TABLE -DimCustomer
+CREATE TABLE DimCustomer (
+    CustomerID INT PRIMARY KEY autoincrement start 1 increment 1,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Gender VARCHAR(10),
+    DateOfBirth DATE,
+    Email VARCHAR(100),
+    Phone Varchar(30),
+    Address VARCHAR(400),
+    City VARCHAR(50),
+    State VARCHAR(50),
+    ZipCode VARCHAR(10),
+    Country VARCHAR(50),
+    LoyaltyProgramID INT
+);
+Alter table dimcustomer
+modify country varchar(500);
+
+
+-- CREATING DIMENSION TABLE: DimProduct
+CREATE TABLE DimProduct (
+    ProductID INT PRIMARY KEY autoincrement start 1 increment 1,
+    ProductName VARCHAR(100),
+    Category VARCHAR(50),
+    Brand VARCHAR(50),
+    UnitPrice DECIMAL(10, 2)
+);
+
+-- CREATING DIMENSION TABLE: DimStore
+CREATE TABLE DimStore (
+    StoreID INT PRIMARY KEY autoincrement start 1 increment 1,
+    StoreName VARCHAR(100),
+    StoreType VARCHAR(50),
+	StoreOpeningDate DATE,
+    Address VARCHAR(400),
+    City VARCHAR(50),
+    State VARCHAR(50),
+    Country VARCHAR(50),
+    Regions VARCHAR(10),
+    ManagerName VARCHAR(100)
+);
+
+-- CREATING DIMENSION TABLE: DimLoyaltyProgram
+CREATE TABLE DimLoyaltyProgram (
+    LoyaltyProgramID INT PRIMARY KEY,
+    ProgramName VARCHAR(100),
+    ProgramTier VARCHAR(50),
+    PointsAccrued INT
+);
+
+-- CREATING DIMENSION TABLE: FactOrders
+CREATE TABLE FactOrders (
+    OrderID INT PRIMARY KEY autoincrement start 1 increment 1,
+    DateID INT,
+    CustomerID INT,
+    ProductID INT,
+    StoreID INT,
+    QuantityOrdered INT,
+    OrderAmount DECIMAL(10, 2),
+    DiscountAmount DECIMAL(10, 2),
+    ShippingCost DECIMAL(10, 2),
+    TotalAmount DECIMAL(10, 2),
+    FOREIGN KEY (DateID) REFERENCES DimDate(DateID),
+    FOREIGN KEY (CustomerID) REFERENCES DimCustomer(CustomerID),
+    FOREIGN KEY (ProductID) REFERENCES DimProduct(ProductID),
+    FOREIGN KEY (StoreID) REFERENCES DimStore(StoreID)
+);
+
+
+-- CREATING FILE FORMTA FOR STAGING THE CSV FILES
+
+CREATE OR REPLACE FILE FORMAT file1 
+TYPE = 'CSV' 
+FIELD_DELIMITER = ',' 
+FIELD_OPTIONALLY_ENCLOSED_BY = '"' 
+SKIP_HEADER = 1
+DATE_FORMAT = 'YYYY-MM-DD';
+
+
+--CREATING STAGE TO TEMPORARILY STORE DATA
+CREATE STAGE Stage1
+FILE_FORMAT = file1;
+
+LIST @stage1;
+
+
+-- DATA INGESTION FROM STAGE
+COPY INTO DimDate 
+FROM @Stage1
+FILE_FORMAT= file1;
+
+
+SELECT * FROM DIMDATE;
+
+
+COPY INTO DimCustomer (FirstName ,
+    LastName ,
+    Gender ,
+    DateOfBirth ,
+    Email ,
+    Phone ,
+    Address,
+    City,
+    State ,
+    ZipCode ,
+    Country,
+    LoyaltyProgramID)
+FROM @Stage1/DimCustomerData.csv
+FILE_FORMAT = (FORMAT_NAME = file1);
+
+
+select * from dimcustomer;
+
+
+COPY INTO DimStore (
+    StoreName ,
+    StoreType,
+	StoreOpeningDate ,
+    Address ,
+    City ,
+    State,
+    Country,
+    Regions,
+    ManagerName)
+FROM @stage1/DimStoreData.csv
+FILE_FORMAT = (FORMAT_NAME = file1);
+
+select * from dimstore;
+
+
+COPY INTO DimLoyaltyProgram 
+FROM @Stage1/DimLoyaltyInfo.csv
+FILE_FORMAT =file1;
+
+select * from dimloyaltyprogram;
+
+COPY INTO FactOrders( DateID ,
+    CustomerID ,
+    ProductID ,
+    StoreID ,
+    QuantityOrdered ,
+    OrderAmount ,
+    DiscountAmount ,
+    ShippingCost ,
+    TotalAmount)
+FROM @Stage1/Factdata.csv
+FILE_FORMAT = file1;
+
+select * from factorders;
+
+list @stage1;
+
+copy into dimproduct(
+    ProductName ,
+    Category ,
+    Brand ,
+    UnitPrice)
+from @stage1/DimProductData.csv
+file_format = file1;
+
+
+
 
