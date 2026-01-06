@@ -1,1 +1,87 @@
+# Retail Stores End to end Data Warehouse Project
+
+## 📌 Project Overview
+This project demonstrates the end‑to‑end process of building a **Retail Data Warehouse** using **Snowflake** as the cloud data platform, **Python (Pandas)** for ETL and data cleaning, and **Power BI** for interactive dashboards.  
+
+The goal is to transform raw retail data into meaningful insights such as **monthly sales trends, customer activity, and KPIs**, enabling better business decision‑making.
+
+---
+
+## 🛠 Tools & Technologies Used
+- **Python (Pandas)** → Data cleaning and transformation of raw Excel/CSV files  
+- **Snowflake** → Cloud data warehouse for storing fact and dimension tables  
+- **SQL** → Schema design, data loading, and analytics queries  
+- **Power BI** → Visualization and dashboard creation  
+- **Excel/CSV** → Raw datasets used as input  
+
+---
+
+## 📂 Repository Structure
+Retail-Stores-Data-Warehouse-Project/
+│
+├── README.md                 # Project overview
+├── data/                    # Raw and cleaned datasets (Excel/CSV)
+├── python/                 # Python scripts for ETL and transformations
+│   ├── data_cleaning.py
+│   ├── etl_pipeline.py
+│   └── analytics.py
+├── snowflake/                     # Snowflake SQL scripts
+│   ├── create_database_schema.sql
+│   ├── create_tables.sql
+│   ├── load_data.sql
+│   ├── transformations.sql
+│   └── analytics_queries.sql
+├── powerbi/              # Power BI dashboards
+    └── retail_dashboard.pbix
+
+
+---
+
+## ⚙️ Workflow
+1. **Data Preparation (Python + Pandas)**  
+   - Cleaned raw Excel/CSV files  
+   - Handled missing values, standardized column names, exported cleaned datasets  
+
+2. **Data Warehouse (Snowflake)**  
+   - Created database, schema, fact and dimension tables  
+   - Loaded cleaned datasets into Snowflake using `COPY INTO`  
+   - Designed a **star schema** for efficient analytics  
+
+3. **Analytics (SQL)**  
+   - Wrote queries for monthly sales, customer activity, and KPIs  
+   - Created views for reporting  
+
+4. **Visualization (Power BI)**  
+   - Connected Power BI to Snowflake  
+   - Built dashboards showing sales trends, top customers, and overall KPIs  
+   - Exported screenshots and `.pbix` file for sharing  
+
+---
+
+## 📊 Results
+- **Monthly Sales Trends** → Line chart showing revenue growth over time  
+- **Customer Activity** → Top customers by orders and spend  
+- **Retail KPIs** → Total sales, average order value, repeat customers  
+
+## 📊 Power BI Dashboard
+
+Here’s a snapshot of the interactive dashboard built in Power BI:
+
+![Sales Overview Dashboard](dashboards/sales_overview.png)
+
+
+## 🚀 How to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/Retail-Stores-Data-Warehouse-Project.git
+
+
+Future Improvements
+Automate ETL pipeline using Airflow or Matillion
+
+Add more KPIs (e.g., product profitability, regional sales)
+
+Deploy dashboards to Power BI Service for real‑time sharing
+
+
 
