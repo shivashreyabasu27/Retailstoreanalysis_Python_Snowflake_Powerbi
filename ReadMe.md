@@ -65,7 +65,6 @@ Retailstoreanalysis_Python_Snowflake_Powerbi/
 
 ## 👤 Author
 **Shivashreya**  
-📧 shreyareddybasy@gmail.com
-🔗 [LinkedIn]([https://www.linkedin.com/in/your-link](https://www.linkedin.com/in/shiva-shreya-b-8b22a8244/
-)
+📧 shreyareddybasu@gmail.com
+🔗 [LinkedIn]([https://www.linkedin.com/in/your-link](https://www.linkedin.com/in/shiva-shreya-b-8b22a8244/)
 
