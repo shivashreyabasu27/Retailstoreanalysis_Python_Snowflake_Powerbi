@@ -1,52 +1,71 @@
-# Retail Stores End to end Data Warehouse Project
+# Retail Store Analysis: Python + Snowflake + Power BI
 
-## 📌 Project Overview
-This project demonstrates the end‑to‑end process of building a **Retail Data Warehouse** using **Snowflake** as the cloud data platform, **Python (Pandas)** for ETL and data cleaning, and **Power BI** for interactive dashboards.  
-
-The goal is to transform raw retail data into meaningful insights such as **monthly sales trends, customer activity, and KPIs**, enabling better business decision‑making.
+## 📊 Power BI Dashboard
 Here’s a snapshot of the interactive dashboard built in Power BI:
 
-![Retail Store Analysis Dashboard](Power%20BI/Screenshot%202026-01-06%20000617.png)
+![Retail Store Dashboard](Power%20BI/Screenshot%202026-01-06%20000617.png)
+
 ---
 
-## 🛠 Tools & Technologies Used
-- **Python (Pandas)** → Data cleaning and transformation of raw Excel/CSV files  
-- **Snowflake** → Cloud data warehouse for storing fact and dimension tables  
-- **SQL** → Schema design, data loading, and analytics queries  
-- **Power BI** → Visualization and dashboard creation  
-- **Excel/CSV** → Raw datasets used as input  
+## 📌 Project Overview
+This project demonstrates the end‑to‑end process of building a **Retail Data Warehouse** using:
+- Python (Pandas) for data cleaning and ETL
+- Snowflake for cloud data warehousing
+- SQL for schema design and analytics queries
+- Power BI for interactive dashboards
+
+The goal: transform raw retail data into actionable insights such as **monthly sales trends, customer activity, and KPIs**.
+
+---
+
+## 🛠 Tools & Technologies
+- **Python (Pandas)** → Data cleaning and transformation  
+- **Snowflake** → Cloud data warehouse  
+- **SQL** → Schema design, queries, and transformations  
+- **Power BI** → Visualization and reporting  
+- **Excel/CSV** → Raw datasets  
+
+---
+
+## 📂 Repository Structure
+
+Retailstoreanalysis_Python_Snowflake_Powerbi/
+│
+├── data/                # Raw and cleaned datasets
+├── scripts/             # Python ETL and analytics scripts
+├── sql/                 # Snowflake SQL scripts
+├── Power BI/            # Dashboard screenshots + .pbix file
+└── ReadMe.md             # Project documentation
+
 
 ---
 
 ## ⚙️ Workflow
-1. **Data Preparation (Python + Pandas)**  
-   - Cleaned raw Excel/CSV files  
-   - Handled missing values, standardized column names, exported cleaned datasets  
-
-2. **Data Warehouse (Snowflake)**  
-   - Created database, schema, fact and dimension tables  
-   - Loaded cleaned datasets into Snowflake using `COPY INTO`  
-   - Designed a **star schema** for efficient analytics  
-
-3. **Analytics (SQL)**  
-   - Wrote queries for monthly sales, customer activity, and KPIs  
-   - Created views for reporting  
-
-4. **Visualization (Power BI)**  
-   - Connected Power BI to Snowflake  
-   - Built dashboards showing sales trends, top customers, and overall KPIs  
-   - Exported screenshots and `.pbix` file for sharing  
+1. **Data Preparation (Python)** → Cleaned raw Excel/CSV files  
+2. **Data Warehouse (Snowflake)** → Created schema, fact & dimension tables  
+3. **Analytics (SQL)** → Queries for KPIs and trends in snowflake
+4. **Visualization (Power BI)** → Dashboards showing sales trends & customer activity  
 
 ---
 
 ## 📊 Results
-- **Amount by store type** → Showing pie chart based on store types, program tiers, region wise amount
-- **Customer Activity** → Top customers by age
-- **Retail KPIs** → Total sales, average order value,Discount value 
+- **Monthly Sales Trends** → Revenue growth over time  
+- **Customer Activity** → Top customers by orders and spend  
+- **KPIs** → Total sales, average order value, repeat customers  
 
-Future Improvements
-Automate ETL pipeline using Airflow or Matillion
+---
 
+## 🚀 How to Run
+1. Clone the repo  
+2. Run Python scripts in `scripts/`  
+3. Execute SQL scripts in `sql/` on Snowflake  
+4. Open Power BI dashboards in `Power BI/`  
 
+---
 
+## 👤 Author
+**Shivashreya**  
+📧 shreyareddybasy@gmail.com
+🔗 [LinkedIn]([https://www.linkedin.com/in/your-link](https://www.linkedin.com/in/shiva-shreya-b-8b22a8244/
+)
 
