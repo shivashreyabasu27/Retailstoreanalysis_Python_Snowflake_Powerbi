@@ -26,7 +26,7 @@ The goal: transform raw retail data into actionable insights such as **monthly s
 - **Excel/CSV** → Raw datasets  
 
 ---
-
+```
 ## 📂 Repository Structure
 
 Retailstoreanalysis_Python_Snowflake_Powerbi/
@@ -35,9 +35,9 @@ Retailstoreanalysis_Python_Snowflake_Powerbi/
 ├── scripts/             # Python ETL and analytics scripts
 ├── sql/                 # Snowflake SQL scripts
 ├── Power BI/            # Dashboard screenshots + .pbix file
-└── ReadMe.md             # Project documentation
+└── ReadMe.md            # Project documentation
 
-
+```
 ---
 
 ## ⚙️ Workflow
