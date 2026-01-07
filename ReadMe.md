@@ -4,7 +4,9 @@
 This project demonstrates the end‑to‑end process of building a **Retail Data Warehouse** using **Snowflake** as the cloud data platform, **Python (Pandas)** for ETL and data cleaning, and **Power BI** for interactive dashboards.  
 
 The goal is to transform raw retail data into meaningful insights such as **monthly sales trends, customer activity, and KPIs**, enabling better business decision‑making.
+Here’s a snapshot of the interactive dashboard built in Power BI:
 
+![Retail Store Analysis Dashboard](Power%20BI/Screenshot%202026-01-06%20000617.png)
 ---
 
 ## 🛠 Tools & Technologies Used
@@ -42,25 +44,9 @@ The goal is to transform raw retail data into meaningful insights such as **mont
 - **Customer Activity** → Top customers by age
 - **Retail KPIs** → Total sales, average order value,Discount value 
 
-## 📊 Power BI Dashboard
-
-Here’s a snapshot of the interactive dashboard built in Power BI:
-
-![Retail Store Analysis Dashboard](Power%20BI/Screenshot%202026-01-06%20000617.png)
-
-
-## 🚀 How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/Retail-Stores-Data-Warehouse-Project.git
-
-
 Future Improvements
 Automate ETL pipeline using Airflow or Matillion
 
-Add more KPIs (e.g., product profitability, regional sales)
-
-Deploy dashboards to Power BI Service for real‑time sharing
 
 
 
